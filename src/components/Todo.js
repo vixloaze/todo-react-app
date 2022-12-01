@@ -13,19 +13,44 @@ import React, { useState } from "react";
 function Todo(props) {
 
     const [item, setItem] = useState(props.item);
+    const [readOnly, setReadOnly] = useState(true);
 
     const deleteItem = props.deleteItem;
+    const editItem = props.editItem;
 
     const deleteEventHandler = () => {
         deleteItem(item);
     }
 
+    const turnOffReadOnly = () => {
+        setReadOnly(false);
+    }
+
+    const turnOnReadOnly = (e) => {
+        if(e.key === "Enter") {
+            setReadOnly(true);
+        }
+    }
+
+    const editEventHandler = (e) => {
+        item.title = e.target.value;
+        editItem();
+    }
+
+    const CheckboxEventHandler = (e) => {
+        item.done = e.target.checked;
+        editItem();
+    }
+
     return (
         <ListItem>
-            <Checkbox checked={item.done} />
+            <Checkbox checked={item.done} onChange={CheckboxEventHandler} />
             <ListItemText>
                 <InputBase 
-                    inputProps={{"aria-label": "naked"}}
+                    inputProps={{"aria-label": "naked" , readOnly: readOnly}}
+                    onClick = {turnOffReadOnly}
+                    onKeyPress = {turnOnReadOnly}
+                    onChange = {editEventHandler}
                     type="text"
                     id={item.id}
                     name={item.id}

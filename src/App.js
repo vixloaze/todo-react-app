@@ -23,13 +23,17 @@ function App() {
     //삭제할 아이템을 제외한 아이템을 다시 배열에 저장한다.
     setItems([...newItems]);
   }
+
+  const editItem = () => {
+    setItems([...items]);
+  }
   
     let todoItems = 
       items.length > 0 && (
         <Paper style={{margin:16}}>
           <List>
             {items.map((item) => (
-              <Todo item={item} key={item.id} deleteItem={deleteItem} />
+              <Todo item={item} key={item.id} editItem = {editItem} deleteItem={deleteItem} />
             ))}
           </List>
         </Paper>
