@@ -2,7 +2,7 @@
 
 이 프로젝트는 Todo 애플리케이션에서 Frontend 에서 item을 list에 등록,삭제,수정하는 것을 공부한 프로젝트입니다.
 
-![image](https://user-images.githubusercontent.com/101315462/204960174-7188cbbe-7717-4125-b80b-616e973d251b.png)
+<img width="40%" src="https://user-images.githubusercontent.com/101315462/204960174-7188cbbe-7717-4125-b80b-616e973d251b.png"/>
 
 # Getting Started with Create React App
 
