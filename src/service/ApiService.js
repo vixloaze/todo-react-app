@@ -31,7 +31,9 @@ export function call(api, method, request) {
 export function signin(userDTO) {
     return call("/auth/signin", "POST", userDTO)
         .then((response) => {
-            console.log("response :" + response.token);
-            alert("로그인 토큰: "+ response.token);
+            if(response.token) {
+                // token이 존재하는 경우 Todo 화면으로 리디렉트
+                window.location.href = "/";
+            }
         });
 }
