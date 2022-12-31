@@ -55,6 +55,8 @@ function Login() {
                             로그인
                         </Button>
                     </Grid>
+                </Grid>
+                <Grid container justify="flex-end" style={{marginTop: "5%"}}>
                     <Grid item>
                         <Link to="/signup" variant="body2">
                             계정이 없습니까? 여기서 가입하세요.

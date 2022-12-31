@@ -53,17 +53,12 @@ function SignUp() {
                         />
                     </Grid>
                     <Grid item xs={12}>
-                        <Button
-                            type="submit"
-                            fullWidth
-                            varient="contained"
-                            color="primary"
-                        >
+                        <Button type="submit" fullWidth variant="contained" color="primary">
                             계정 생성
                         </Button>
                     </Grid>
                 </Grid>
-                <Grid container justify="flex-end">
+                <Grid container justify="flex-end" style={{marginTop: "5%"}}>
                     <Grid item>
                         <Link to="/login" variant="body2">
                             이미 계정이 있습니까? 로그인하세요.
