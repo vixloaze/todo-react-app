@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Grid, Typography, TextField, Button } from "@mui/material";
-import { signin } from "../service/ApiService";
+import { signin , socialLogin } from "../service/ApiService";
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -13,6 +13,10 @@ function Login() {
         // ApiService의 signin 메서드를 사용해 로그인
         signin({username: username , password: password});
     };
+
+    const handleSocialLogin = (provider) => {
+        socialLogin(provider);
+    }
 
     return (
         <Container component="main" maxWidth="xs" style={{marginTop: "8%"}}>
@@ -53,6 +57,12 @@ function Login() {
                     <Grid item xs={12}>
                         <Button type="submit" fullWidth variant="contained" color="primary">
                             로그인
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Button onClick={()=> handleSocialLogin("github")} fullWidth 
+                            variant="contained" style={{backgroundColor: '#000'}}>
+                            Github로 로그인
                         </Button>
                     </Grid>
                 </Grid>
